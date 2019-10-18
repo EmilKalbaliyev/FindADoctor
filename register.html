@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+
+
+
+
+    <title>FIND A DOCTOR</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">   
+	<script src="app.js"></script>  
+	  
+</head>
+
+<body>
+
+<div class="center" >
+
+<button class="tablink" onclick="opentab('Doctor', this, 'green')" >DOCTOR</button>
+<button class="tablink" id="default" onclick="opentab('Patient', this, 'green')">Patient</button>
+
+
+
+<div id="Doctor" class="tabcontent">
+  
+<h2>Registration a doctor</h2>
+<p></p>
+
+<div class="container">
+  <form action="/action_page.php">
+  
+ 
+	
+	
+	<div class="row">
+     <div class="col-100">    
+       <div class="col-50">
+        <select id="Gender" name="Gender" >
+		
+		 <option value="">--  Gender  --</option>
+          <option value="australia">Male</option>
+          <option value="canada">Female</option>
+        </select>
+      </div>
+   
+	
+	
+	<div class="col-50">
+        <select id="Title" name="Title">
+        <option value="">--  Title  --</option>
+        </select>   
+    </div>
+      </div>     
+    </div>
+	
+	
+	 <div class="row">
+     
+      <div class="col-100">
+        <select id="speciality" name="speciality">
+          <option value="">---  specialization  -----</option>
+        </select>
+      </div>
+    </div>
+	
+	
+  
+    <div class="row">
+    
+      <div class="col-100">
+        <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+      </div>
+    </div>
+    <div class="row">
+      
+      <div class="col-100">
+        <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+      </div>
+    </div>
+	
+	 <div class="row">
+     
+      <div class="col-100">
+        <input type="text" id="hospital" name="hospital" placeholder="hospital(if applicable)" required>
+      </div>
+    </div>
+	
+	 <div class="row">
+      
+      <div class="col-100">
+        <input type="text" id="address" name="address" placeholder="Your address.." required>
+      </div>
+    </div>
+	
+	 <div class="row">
+      
+      <div class="col-100">
+        <input type="text" id="postal-code" name="postal-code" placeholder="postal code.." required>
+      </div>
+    </div>
+	
+	 <div class="row">
+      
+      <div class="col-100">
+        <input type="text" id="Email" name="Email" placeholder="Email" required>
+      </div>
+    </div>
+	
+	
+   
+    <div class="row">
+     
+      <div class="col-100">
+        <textarea id="subject" name="subject" placeholder="Write something about yourself.." style="height:200px" required></textarea>
+      </div>
+    </div>
+	
+	
+    <div class="row">
+	 <div class="col-100">
+        <input type="submit" value="upload document" required>
+      </div>
+      
+    </div>
+	
+	
+	<div class="row">
+	 <div class="col-100">
+       <input type="checkbox" name="vehicle" value="Bike" required> I accept the term of use &privacy policy<br>
+      </div>
+      
+    </div>
+	
+	
+	<div class="row">
+	 <div class="col-100">
+        <input style="width:100%;" type="submit" value="Register now">
+      </div>
+      
+    </div>
+	
+  </form>
+</div>
+
+</div>
+
+<div id="Patient" class="tabcontent">
+  
+<!--  ---------------------------------------------------- -->
+  
+<h2>Registration a pation</h2>
+<p></p>
+
+<div class="container">
+  <form action="/action_page.php">
+  
+<div class="row">
+     <div class="col-100">    
+       <div class="col-50">
+         <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+      </div>
+   
+	
+	
+	<div class="col-50">
+          <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>   
+    </div>
+      </div>     
+    </div>
+	
+	
+  
+  
+	
+	
+	
+	 <div class="row">
+      
+      <div class="col-100">
+        <input type="text" id="Email" name="Email" placeholder="Email" required>
+      </div>
+    </div>
+	
+	
+   
+   <div class="row">
+     
+      <div class="col-100">
+        <input type="text" id="password" name="password" placeholder="password" required>
+      </div>
+    </div>
+	
+	 <div class="row">
+      
+      <div class="col-100">
+        <input type="text" id="confirm-password" name="confirm-password" placeholder="confirm-password" required>
+      </div>
+    </div>
+	
+	 
+	
+	
+   
+	
+	
+	<div class="row">
+	 <div class="col-100">
+       <input type="checkbox" name="vehicle" value="Bike" required> I accept the term of use &privacy policy<br>
+      </div>
+      
+    </div>
+	
+	
+	<div class="row">
+	 <div class="col-100">
+        <input style="width:100%;" type="submit" value="Register now">
+      </div>
+      
+    </div>
+	
+  </form>
+</div>
+
+</div>
+
+</div>
+ 
+<script> 
+ function opentab(Name, elmnt, color) {
+  // Hide all elements with class="tabcontent" by default */
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Remove the background color of all tablinks/buttons
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+
+  // Show the specific tab content
+  document.getElementById(Name).style.display = "block";
+
+  // Add the specific color to the button used to open the tab content
+  elmnt.style.backgroundColor = color;
+}
+document.getElementById("default").click();
+  // Get the element with id="defaultOpen" and click on it
+document.getElementById("default").click();
+</script>  
+</body>
